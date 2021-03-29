@@ -1,5 +1,5 @@
 # imports
-from flask import Flask
+from flask import Flask, render_template
 from flaskext.mysql import MySQL
 
 # web application
@@ -13,16 +13,14 @@ app.config['MYSQL_DATABASE_DB'] = 'education'
 app.config['MYSQL_DATABASE_HOST'] = 'localhost'
 mysql.init_app(app)
 
-@app.route('/colleges')
-def colleges():
+@app.route('/read')
+def read():
     cursor = mysql.get_db().cursor()
     response = cursor.execute("SELECT * FROM colleges")
     html = ''    
     if response > 0:
         colleges = cursor.fetchall()
-        for college in colleges:
-            html += college[1] + '<br/>'
-        return html
+        return render_template('read.html', list=colleges)
 
 # start server
 if __name__ == '__main__':
