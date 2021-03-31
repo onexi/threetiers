@@ -8,7 +8,7 @@ app = Flask(__name__)
 @app.route('/', methods=['GET','POST'])
 def hello_world():
     if (request.method == 'POST'):
-        someJson = request.get_son()
+        someJson = request.get_json()
         return jsonify({'yourData': someJson}), 201
     else:
         return jsonify({'message': 'Hello, World!'})

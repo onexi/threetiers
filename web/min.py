@@ -7,7 +7,7 @@ app = Flask(__name__)
 # root route - landing page
 @app.route('/')
 def hello_world():
-    return 'Hello, World!'
+    return 'Hello, people!'
 
 # start server - note the port is 3000
 if __name__ == '__main__':

@@ -18,6 +18,14 @@ def viewer():
     inspect['values'] = request.values
     inspect['first'] = request.form.get('first')
     inspect['last'] = request.form.get('last')
+    inspect['path'] = request.path
+    inspect['url'] = request.url
+    inspect['base_url'] = request.base_url
+    inspect['content_encoding'] = request.content_encoding
+    inspect['content_length'] = request.content_length
+    inspect['content_type'] = request.content_type
+    inspect['host'] = request.host
+    inspect['mimetype'] = request.mimetype
     if (request.method == 'POST'):
         inspect['receivedJson'] = request.get_json()
     return jsonify(inspect)

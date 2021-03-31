@@ -18,7 +18,7 @@ if __name__ == '__main__':
 
 # -----------------------------------------------
 # Requesting Multiple Users
-# https://randomuser.me/api/?results=5000
+# https://randomuser.me/api/?results=5
 
 # Specifying a gender
 # https://randomuser.me/api/?gender=female
