@@ -1,0 +1,4 @@
+host: "localhost"
+user: "root"
+pwrd: "MyNewPass"
+db: "education"
